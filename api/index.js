@@ -1,10 +1,16 @@
-const express = require('express');
+const express = require("express");
+const fs = require("fs");
+const cors = require("cors");
+require("dotenv").config();
+
 const app = express();
 
-app.get('/', (req, res) => {
+app.use(cors());
+app.use(express.json());
+
+app.get("/", (req, res) => {
   res.json({
-    message: 'Hello, World!',
-    timestamp: new Date().toISOString()
+    ping: true,
   });
 });
 
