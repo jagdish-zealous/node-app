@@ -2,7 +2,10 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello, Express!');
+  res.json({
+    message: 'Hello, World!',
+    timestamp: new Date().toISOString()
+  });
 });
 
 module.exports = app;
